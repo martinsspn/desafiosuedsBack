@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/message")
@@ -33,7 +34,7 @@ public class MessageController {
                 service.findAll()
                         .stream()
                         .map(message -> modelMapper.map(message, MessageDTO.class))
-                        .toList(),
+                        .collect(Collectors.toList()),
                 HttpStatus.OK
         );
     }
@@ -46,7 +47,9 @@ public class MessageController {
             MessageDTO response = modelMapper.map(service.insertMessage(message), MessageDTO.class);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         }catch (IllegalArgumentException e){
-            MessageDTO response = new MessageDTO(e.getMessage(), LocalDate.now());
+            MessageDTO response = new MessageDTO();
+            response.setMessage(e.getMessage());
+            response.setTimestamp(LocalDate.now());
             return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
         }
     }

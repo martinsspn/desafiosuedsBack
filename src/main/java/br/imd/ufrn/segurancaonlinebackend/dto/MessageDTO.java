@@ -1,16 +1,27 @@
 package br.imd.ufrn.segurancaonlinebackend.dto;
 
-import lombok.*;
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class MessageDTO {
     private String message;
 
     private LocalDate timestamp;
+
+    public LocalDate getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDate timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
 }
