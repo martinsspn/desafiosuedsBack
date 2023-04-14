@@ -12,9 +12,6 @@ import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/message")
@@ -36,7 +33,7 @@ public class MessageController {
                 service.findAll()
                         .stream()
                         .map(message -> modelMapper.map(message, MessageDTO.class))
-                        .collect(Collectors.toList()),
+                        .toList(),
                 HttpStatus.OK
         );
     }
