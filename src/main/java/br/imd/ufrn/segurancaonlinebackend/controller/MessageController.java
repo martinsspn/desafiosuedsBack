@@ -1,22 +1,19 @@
 package br.imd.ufrn.segurancaonlinebackend.controller;
 
-import br.imd.ufrn.segurancaonlinebackend.model.Message;
 import br.imd.ufrn.segurancaonlinebackend.dto.MessageDTO;
+import br.imd.ufrn.segurancaonlinebackend.model.Message;
 import br.imd.ufrn.segurancaonlinebackend.service.MessageService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/message")
-@CrossOrigin(origins = "*")
 public class MessageController {
 
     private final MessageService service;
