@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: ${DB_PATH}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+
+  sql:
+    init:
+      platform: postgresql
+      continue-on-error: on
+
+  server:
+    port: ${SERVER_PORT}
+
