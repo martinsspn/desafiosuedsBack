@@ -90,7 +90,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>br.imd.ufrn.segurancaonline.SegurancaOnlineApplication</mainClass>
+                            <mainClass>br.imd.ufrn.segurancaonlinebackend.SegurancaOnlineBackendApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
